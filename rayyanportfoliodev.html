@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RAYYAN-DEV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(15px);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-box{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:linear-gradient(45deg,#00d9ff,#6f5cff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00d9ff;
+}
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding:120px 8% 60px;
+}
+
+.active{
+    display:block;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+.hero-text h1{
+    font-size:65px;
+    background:linear-gradient(45deg,#00d9ff,#7b61ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero-text p{
+    margin:25px 0;
+    line-height:30px;
+    color:#ccc;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,#00d9ff,#7b61ff);
+    margin-top:20px;
+}
+
+.glass{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:35px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:50px;
+}
+
+.services-grid,
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(0,217,255,0.3);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card h3{
+    color:#00d9ff;
+    margin-bottom:15px;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-box p{
+    margin:20px 0;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <div class="logo-box">R</div>
+        <h2>RAYYAN-DEV</h2>
+    </div>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('services')">Services</a>
+        <a onclick="showPage('portfolio')">Portfolio</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="page active" id="home">
+
+    <div class="hero">
+
+        <div class="hero-text">
+            <h1>RAYYAN-DEV</h1>
+            <h2>Creative Digital Agency</h2>
+
+            <p>
+                Professional solutions in Video Editing,
+                Graphics Designing, Website Development
+                and Social Media Marketing.
+            </p>
+
+            <a class="btn" onclick="showPage('services')">
+                Explore Services
+            </a>
+        </div>
+
+        <div class="glass">
+            <h2>Why Choose Us?</h2>
+
+            <br>
+
+            ✔ Professional Quality<br><br>
+            ✔ Fast Delivery<br><br>
+            ✔ Affordable Pricing<br><br>
+            ✔ 24/7 Support<br><br>
+            ✔ Modern Designs
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="page" id="services">
+
+    <h1 class="section-title">Our Services</h1>
+
+    <div class="services-grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1000">
+            <div class="card-content">
+                <h3>Video Editing</h3>
+                <p>
+                    Reels, YouTube videos, cinematic edits,
+                    transitions, color grading and commercials.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1000">
+            <div class="card-content">
+                <h3>Graphics Designing</h3>
+                <p>
+                    Logos, posters, banners, thumbnails
+                    and social media designs.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000">
+            <div class="card-content">
+                <h3>Website Development</h3>
+                <p>
+                    Responsive websites, portfolios,
+                    business sites and web applications.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=1000">
+            <div class="card-content">
+                <h3>Social Media Marketing</h3>
+                <p>
+                    Content strategy, branding,
+                    marketing campaigns and growth.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="page" id="portfolio">
+
+    <h1 class="section-title">Portfolio</h1>
+
+    <div class="portfolio-grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1000">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1000">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=1000">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="page" id="contact">
+
+    <h1 class="section-title">Contact Us</h1>
+
+    <div class="glass contact-box">
+
+        <p><strong>Name:</strong> Muhammad Rayyan-ur-Rehman</p>
+
+        <p><strong>WhatsApp:</strong> +92 330 2959543</p>
+
+        <p><strong>Email:</strong> rayyanrehman624@gmail.com</p>
+
+        <p><strong>Services:</strong></p>
+
+        • Video Editing<br><br>
+        • Graphics Designing<br><br>
+        • Website Development<br><br>
+        • Social Media Marketing
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 RAYYAN-DEV • All Rights Reserved
+</footer>
+
+<script>
+function showPage(page){
+
+    let pages = document.querySelectorAll('.page');
+
+    pages.forEach(function(p){
+        p.classList.remove('active');
+    });
+
+    document.getElementById(page).classList.add('active');
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+</script>
+
+</body>
+</html>
